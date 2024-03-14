@@ -17,7 +17,7 @@ cursor = connection.cursor() # variável de controle
 sql_01 = (
     f'INSERT INTO {TABLE_NAME} '
     '(nome, peso) '
-    'VALUES '
+    'VALUES  '
     '(?,?)' # lista ou tupla
 )
 # multiplos elementos

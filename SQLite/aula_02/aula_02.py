@@ -1,10 +1,11 @@
-# video aula 388
+# video aula 389
 import sqlite3
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).parent.parent / 'BD'
 DB_NAME = 'db.sqlite3'
 DB_FILE = ROOT_DIR / DB_NAME
+print(DB_FILE)
 TABLE_NAME = 'cliente'
 
 # https://www.sqlite.org/doclist.html
@@ -12,19 +13,16 @@ TABLE_NAME = 'cliente'
 connection = sqlite3.connect(DB_FILE) # conectar o arquivo (criar)
 cursor = connection.cursor() # variável de controle
 
-# Criar tabela e colunas SQLite
+# Inserir valores nas colunas da tabela tabela SQLite (UTILIZAR MÉTODO CONFORME aula_04)
 cursor.execute(
-    f'CREATE TABLE IF NOT EXISTS {TABLE_NAME}'
-    '('
-    'id INTEGER PRIMARY KEY AUTOINCREMENT,'
-    'nome TEXT,'
-    'peso REAL'
-    ')'
+    f'INSERT INTO {TABLE_NAME} '
+    '(id, nome, peso) '
+    'VALUES '
+    '(NULL, "Helena", 4), '
+    '(NULL, "Eduardo", 10)'
 )
-# cursor.executemany() # executa varias tarefa na tabela 
 
 connection.commit() # adicionar comando na tabela
-
 cursor.close() # Fechar variável de controle
 connection.close() # Fechar conexão com arquivo
 

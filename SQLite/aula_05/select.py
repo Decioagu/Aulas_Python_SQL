@@ -1,7 +1,7 @@
 # video aula 393
 import sqlite3
 
-from main import DB_FILE, TABLE_NAME
+from caminho import DB_FILE, TABLE_NAME
 
 connection = sqlite3.connect(DB_FILE) # conectar o arquivo (criar)
 cursor = connection.cursor() # variável de controle
@@ -16,7 +16,6 @@ cursor.execute(
 # .fetchmany(n): Recupera linhas do conjunto de resultados "n"
 # .fetchall(): Recuperar todas as linhas de banco de dados em uma lista de tuplas.
 # iter(cursor): Permite iterar sobre o conjunto de resultados linha por linha.
-
 '''
 # print(cursor.fetchone())
 
@@ -40,5 +39,7 @@ linha = cursor.fetchone()
 print(*linha)
 # ---------------------------------------------------------
 
+connection.commit() # adicionar comando na tabela
 cursor.close() # Fechar variável de controle
 connection.close() # Fechar conexão com arquivo
+
