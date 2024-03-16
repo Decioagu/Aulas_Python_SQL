@@ -57,10 +57,6 @@ for linha in iter(cursor):
 print()
 cursor.scroll(0, 'absolute') # retorna cursor para posição desejada
 '''
-Cursor de banco de dados: Em sistemas de banco de dados, existem cursores roláveis. 
-Eles permitem a navegação pelos dados, uma vez solicitado os dados o cursor permanece
-na posição conforme a busca solicitada como iterável, não permitindo nova consulta dos 
-dados já exibidos.
 "cursor.scroll()": É o método que permite reposicionar o cursor para posição desejada 
 para nova consulta.
 '''

@@ -43,33 +43,50 @@ TABLE_NAME = 'cadastro'
 cursor = conexao.cursor() 
 
 # Lendo os valores com SELECT nados MySQL
-sql = (
+sql_01 = (
     f'SELECT * FROM {TABLE_NAME} '
 )
-cursor.execute(sql) 
-data = cursor.fetchall() 
+cursor.execute(sql_01) 
 
-for linha in data:
-    print(*linha)
-# -----------------------------------------------------------------
-print()
-
-# Deletar valores na tabela do MySQL
-sql = (
-    f'UPDATE {TABLE_NAME} '
-    'SET nome = %s '
-    'WHERE id = %s'
-)
-cursor.execute(sql, ("Mara", 5))
-
-print()
-# -----------------------------------------------------------------
-sql = (
-    f'SELECT * FROM {TABLE_NAME} '
-)
-cursor.execute(sql) 
+data = cursor.fetchall() # variável "data"
 
 # Lendo os valores com SELECT nados MySQL
+# consulta a variável 
+print('for 1:')
+for linha in data:
+    print(*linha)
+
+print()
+
+# consulta a variável
+print('for 2:')
+for linha in data:
+    print(*linha)
+
+'''
+Cursor de banco de dados: Em sistemas de banco de dados, existem cursores roláveis. 
+Eles permitem a navegação pelos dados, uma vez solicitado os dados o cursor permanece
+na posição conforme a busca solicitada como iterável, não permitindo nova consulta dos 
+dados já exibidos.
+'''
+# -----------------------------------------------------------------
+print()
+
+sql_02 = (
+    f'SELECT * FROM {TABLE_NAME} '
+)
+cursor.execute(sql_02) 
+
+# Lendo os valores com SELECT nados MySQL
+# consulta diretamente ao cursor
+print('for 3:')
+for linha in iter(cursor):
+    print(*linha)
+
+print()
+
+# consulta diretamente ao cursor
+print('for 4:')
 for linha in iter(cursor):
     print(*linha)
 # -----------------------------------------------------------------

@@ -35,20 +35,18 @@ conexao = pymysql.connect(
 TABLE_NAME = 'cadastro'
 
 '''
-# .fetchone(): Recupera apenas uma linha do conjunto de resultados.
-# .fetchmany(n): Recupera linhas do conjunto de resultados "n"
-# .fetchall(): Recuperar todas as linhas de banco de dados em uma lista de tuplas.
-# iter(cursor): Permite iterar sobre o conjunto de resultados linha por linha.
+cursorclass = pymysql.cursors.DictCursor
+Retorna o resultado do __SELECT__ como dicionários:
 '''
 
 # variável de controle (abrir conexão)
 cursor = conexao.cursor() 
 
 # Lendo os valores com SELECT nados MySQL
-sql = (
+sql_01 = (
     f'SELECT * FROM {TABLE_NAME} '
 )
-cursor.execute(sql) 
+cursor.execute(sql_01) 
 # data = cursor.fetchall() 
 
 # for linha in data:
@@ -61,11 +59,11 @@ for linha in iter(cursor):
 print()
 # ------------------------------------------------------------------
 # Lendo os valores com SELECT na tabela do MySQL
-sql = (
+sql_02 = (
     f'SELECT * FROM {TABLE_NAME} '
     'WHERE id = %s'
 )
-cursor.execute(sql, 7)
+cursor.execute(sql_02, 7)
 data = cursor.fetchone()
 
 print(data)

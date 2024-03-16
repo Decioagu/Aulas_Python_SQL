@@ -43,10 +43,10 @@ TABLE_NAME = 'cadastro'
 cursor = conexao.cursor() 
 
 # Lendo os valores com SELECT nados MySQL
-sql = (
+sql_01 = (
     f'SELECT * FROM {TABLE_NAME} '
 )
-cursor.execute(sql) 
+cursor.execute(sql_01) 
 data = cursor.fetchall() 
 
 for linha in data:
@@ -54,10 +54,20 @@ for linha in data:
 # -----------------------------------------------------------------
 print()
 
-sql = (
+# Deletar valores na tabela do MySQL
+sql_02 = (
+    f'UPDATE {TABLE_NAME} '
+    'SET nome = %s '
+    'WHERE id = %s'
+)
+cursor.execute(sql_02, ("Mara", 5))
+
+print()
+# -----------------------------------------------------------------
+sql_03 = (
     f'SELECT * FROM {TABLE_NAME} '
 )
-cursor.execute(sql) 
+cursor.execute(sql_03) 
 
 # Lendo os valores com SELECT nados MySQL
 for linha in iter(cursor):

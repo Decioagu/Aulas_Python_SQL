@@ -34,8 +34,9 @@ TABLE_NAME = 'cadastro'
 
 # variável de controle (abrir conexão)
 cursor = conexao.cursor() 
+# ----------------------------------------------------------------------
 
-# Inserir valores nas colunas da tabela MySQL
+# Inserir valor nas colunas da tabela MySQL
 sql_01 = (
     f'INSERT INTO {TABLE_NAME} '
     '(nome, idade) '
@@ -44,9 +45,14 @@ sql_01 = (
 )
 
 data_01 = ('Luana', 40)
-
 result_01 = cursor.execute(sql_01, data_01) # tupla ou lista
-print(sql_01, data_01)
+print(sql_01)
+print(data_01)
+print(result_01)
+print()
+# ----------------------------------------------------------------------
+
+# Inserir valor nas colunas da tabela MySQL
 
 sql_02 = (
             f'INSERT INTO {TABLE_NAME} '
@@ -58,8 +64,11 @@ data_02 = {
     "age": 37,
     "name": "Leandro",
 }
-result = cursor.execute(sql_02, data_02) # dicionário
-print(sql_02, data_02)
+result_02 = cursor.execute(sql_02, data_02) # dicionário
+print(sql_02)
+print(data_02)
+print(result_02)
+# ----------------------------------------------------------------------
 
 conexao.commit() # Adicionar comando na tabela
 cursor.close() # Fechar variável de controle

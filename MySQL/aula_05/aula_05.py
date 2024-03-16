@@ -33,7 +33,8 @@ conexao = pymysql.connect(
 TABLE_NAME = 'cadastro'
 
 # variável de controle (abrir conexão)
-cursor = conexao.cursor() 
+cursor = conexao.cursor()
+# ----------------------------------------------------------------------
 
 # Inserir valores nas colunas da tabela MySQL
 sql_01 = (
@@ -44,9 +45,15 @@ sql_01 = (
 )
 
 data_01 = [('Ana', 6), ('Décio', 43)]
+print(sql_01, data_01)
+print()
 
 result_01 = cursor.executemany(sql_01, data_01) # tupla ou lista
-print(sql_01, data_01)
+print(sql_01)
+print(data_01)
+print(result_01)
+print()
+# ----------------------------------------------------------------------
 
 sql_02 = (
             f'INSERT INTO {TABLE_NAME} '
@@ -58,9 +65,12 @@ data_02 = [
     {"age": 3, "name": "Pedro"},
     {"age": 55, "name": "Helena"}
 ]
-result = cursor.executemany(sql_02, data_02) # dicionário
-print(sql_02, data_02)
+result_02 = cursor.executemany(sql_02, data_02) # dicionário
+print(sql_02)
+print(data_02)
+print(result_02)
+# ----------------------------------------------------------------------
 
-conexao.commit() # Adicionar comando na tabela
+# conexao.commit() # Adicionar comando na tabela
 cursor.close() # Fechar variável de controle
 conexao.close() # Fechar conexão com arquivo

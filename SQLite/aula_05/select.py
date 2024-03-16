@@ -39,7 +39,6 @@ linha = cursor.fetchone()
 print(*linha)
 # ---------------------------------------------------------
 
-connection.commit() # adicionar comando na tabela
 cursor.close() # Fechar variável de controle
 connection.close() # Fechar conexão com arquivo
 

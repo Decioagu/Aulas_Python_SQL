@@ -41,12 +41,13 @@ TABLE_NAME = 'cadastro'
 
 # variável de controle (abrir conexão)
 cursor = conexao.cursor() 
+# ------------------------------------------------------------------
 
 # Lendo os valores com SELECT nados MySQL
-sql = (
+sql_01 = (
     f'SELECT * FROM {TABLE_NAME} '
 )
-cursor.execute(sql) 
+cursor.execute(sql_01) 
 data = cursor.fetchall() 
 
 for linha in data:
@@ -58,15 +59,16 @@ for linha in data:
 
 print()
 # ------------------------------------------------------------------
+
 # Lendo os valores com SELECT na tabela do MySQL
-sql = (
+sql_02 = (
     f'SELECT * FROM {TABLE_NAME} '
     'WHERE id = %s'
 )
-cursor.execute(sql, 7)
+cursor.execute(sql_02, 7)
 data = cursor.fetchone()
-
 print(data)
+# ------------------------------------------------------------------
 
 cursor.close() # Fechar variável de controle
 conexao.close() # Fechar conexão com arquivo
