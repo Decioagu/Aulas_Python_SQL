@@ -28,16 +28,18 @@ OBS: para execução do programa é necessário esta conectado no banco de dados
 **aula_01**
 - __CREATE__ (Criar):
 - Esta operação permite __inserir__ novos registros em uma tabela (colunas).
-    -   CREATE TABLE [table_name] (
-    -   [column1] [type_dado] [regras],
-    -   [column2] [type_dado] [regras],
-    -   ...
-);
+---
+    CREATE TABLE [table_name] (
+    [column1] [type_dado] [regras],
+    [column2] [type_dado] [regras],
+    ... 
+    );
 ---
 
 **aula_02**
 - __INSERT INTO__ (Inserir):
 - É uma instrução usada no contexto de bancos de dados relacionais para __inserir__ novas linhas em uma tabela (valores).
+---
     -   INSERT INTO table_name (column1, column2, ...)
     -   VALUES (value1, value2, ...)
 ---
@@ -45,12 +47,14 @@ OBS: para execução do programa é necessário esta conectado no banco de dados
 **aula_03**
 - __TRUNCATE TABLE__ (Excluir):
 - É uma instrução utilizada em SQL para remover __TODAS AS LINHAS DE UMA TABELA__ de maneira rápida e eficiente.
+---
     -   TRUNCATE TABLE table_name;
 ---
 
 **aula_04 e aula_05**
 - __INSERT INTO__ (Inserir):
 - Inserir um ou mais valores no banco de dados de forma __SEGURA__.
+---
     -   INSERT INTO table_name (column1, column2, ...)
     -   VALUES (%s, %s, ...)
 ---
@@ -62,7 +66,7 @@ OBS: para execução do programa é necessário esta conectado no banco de dados
     -   .fetchmany(n): Recupera linhas do conjunto de resultados "n"
     -   .fetchall(): Recuperar todas as linhas de banco de dados em uma lista de tuplas.
     -   iter(cursor): Permite iterar sobre o conjunto de resultados linha por linha.
-
+---
     -   SELECT [column1], [column2], ...
     -   FROM [table_name]
     -   [WHERE condition]
@@ -73,6 +77,7 @@ OBS: para execução do programa é necessário esta conectado no banco de dados
 **aula_07**
 - __DELETE__ (Excluir):
 - É uma instrução usada em SQL para remover registros específicos de uma tabela. É crucial para a manipulação de dados, pois permite a exclusão de linhas que não são mais necessárias ou que estejam incorretas.
+---
     -   DELETE FROM [table_name]
     -   WHERE [condition];
 ---
@@ -80,6 +85,7 @@ OBS: para execução do programa é necessário esta conectado no banco de dados
 **aula_08**
 - __UPDATE__ (Atualizar):
 - Serve para alterar informações armazenadas em tabelas.
+---
     -   UPDATE [tabela_nome]
     -   SET [coluna1] = [novo_valor1], [coluna2] = [novo_valor2], ...
     -   WHERE [condição];
@@ -113,16 +119,18 @@ OBS: para execução do programa é necessário esta conectado no banco de dados
 **aula_01**
 - __CREATE__ (Criar):
 - Esta operação permite __inserir__ novos registros em uma tabela (colunas).
+---
     -   CREATE TABLE [table_name] (
     -   [column1] [type_dado] [regras],
     -   [column2] [type_dado] [regras],
     -   ...
-);
+    -   );
 ---
 
 **aula_02**
 - __INSERT INTO__ (Inserir):
 - É uma instrução usada no contexto de bancos de dados relacionais para __inserir__ novas linhas em uma tabela (valores).
+---
     -   INSERT INTO table_name (column1, column2, ...)
     -   VALUES (value1, value2, ...)
 ---
@@ -130,10 +138,12 @@ OBS: para execução do programa é necessário esta conectado no banco de dados
 **aula_03 e aula_06**
 - __DELETE__ (Excluir):
 - É uma instrução usada em SQL para remover registros específicos de uma tabela. É crucial para a manipulação de dados, pois permite a exclusão de linhas que não são mais necessárias ou que estejam incorretas.
+---
     -   DELETE FROM [table_name]
     -   WHERE [condition];
-
-- Reiniciar "id" da tabela SQLite
+---
+- Reiniciar "id" da tabela SQLite:
+---
     -   DELETE FROM sqlite_sequence 
     -   WHERE name="{TABLE_NAME}
 ---
@@ -141,6 +151,7 @@ OBS: para execução do programa é necessário esta conectado no banco de dados
 **aula_04**
 - __INSERT INTO__ (Inserir):
 - Inserir um ou mais valores no banco de dados de forma __SEGURA__.
+---
     -   INSERT INTO table_name (column1, column2, ...)
     -   VALUES (?, ?, ...)
 ---
@@ -152,7 +163,7 @@ OBS: para execução do programa é necessário esta conectado no banco de dados
     -   .fetchmany(n): Recupera linhas do conjunto de resultados "n"
     -   .fetchall(): Recuperar todas as linhas de banco de dados em uma lista de tuplas.
     -   iter(cursor): Permite iterar sobre o conjunto de resultados linha por linha.
-
+---
     -   SELECT [column1], [column2], ...
     -   FROM [table_name]
     -   [WHERE condition]
@@ -163,6 +174,7 @@ OBS: para execução do programa é necessário esta conectado no banco de dados
 **aula_07**
 - __UPDATE__ (Atualizar):
 - Serve para alterar informações armazenadas em tabelas.
+---
     -   UPDATE [tabela_nome]
     -   SET [coluna1] = [novo_valor1], [coluna2] = [novo_valor2], ...
     -   WHERE [condição];
