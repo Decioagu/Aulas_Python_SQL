@@ -16,6 +16,7 @@
 
 ## MySQL
 - __PyMySQL__ é uma biblioteca leve e pura de Python que facilita a interação com bancos de dados MySQL.
+  
 OBS: para execução do programa é necessário esta conectado no banco de dados já criado no __SGBD__ de sua escolha.
 -   SGBD = Sistema de Gerenciamento de Banco de Dados
 
