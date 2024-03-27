@@ -183,3 +183,42 @@ OBS: para execução do programa é necessário esta conectado no banco de dados
 **BD**
 - Arquivo banco de dados local de SQLite.
 ---
+
+## MongoDB
+
+- O __MongoDB__ é um sistema de gerenciamento de banco de dados (SGBD) __NoSQL__ de código aberto e multiplataforma, conhecido por sua flexibilidade e escalabilidade. Ele se diferencia dos bancos de dados relacionais tradicionais por utilizar um modelo de dados orientado a documentos, em vez de tabelas estruturadas.
+
+**aula_01**
+- __.create_collection()__ (Create):
+- O método é usado para criar uma nova coleção dentro de um banco de dados específico no MongoDB.
+
+- __.list_database_names()__:
+- Esse método é utilizado para listar os nomes de todos os banco de dados existente ativos.
+---
+
+**aula_02**
+- __CRUD__ : __Criar, Rear, Atualizar e Deletar__
+
+- __.collection.insert_one()__ (Create):
+- O método é usado para insere apenas um documento por chamada.
+
+- __.collection.find()__ (Read):
+- O método é usado para retornará todos os documentos presentes na coleção.
+
+- __.collection.find_one()__ (Read):
+- O método é usado para retornar apenas um documento presentes na coleção.
+
+- __.collection.update_one()__ (Update):
+- O método é usado para atualizar dados específicos em um documento com base em um critério de pesquisa
+
+- __.collection.update_many()__ (Update):
+- O método é usado para atualizar vários documentos em uma coleção ao mesmo tempo.
+
+- __.collection.delete_one()__ (Delete):
+- O método é usado para excluir um único documento de uma coleção.
+
+- Um __índice TTL__ (Time-to-Live) é um tipo especial de índice de campo único que o MongoDB usa para remover automaticamente documentos de uma coleção após um período de tempo especificado.
+---
+
+**aula_03**
+- Na __aula_03__ esta sendo empregado o uso de __armazenamento de senhas no arquivo .env__ e uso de __método de classe__ para gerir operações de __CRUD__. 

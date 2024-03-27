@@ -1,0 +1,253 @@
+use decio
+
+show collections
+
+db.createCollection("teste")
+
+show dbs
+
+db.teste.insertOne({
+  title: "Post Title 1",
+  body: "Body of post.",
+  category: "News",
+  likes: 1,
+  tags: ["news", "events"],
+  date: Date()
+})
+
+db.teste.insertMany([  
+  {
+    title: "Post Title 2",
+    body: "Body of post.",
+    category: "Event",
+    likes: 2,
+    tags: ["news", "events"],
+    date: Date()
+  },
+  {
+    title: "Post Title 3",
+    body: "Body of post.",
+    category: "Technology",
+    likes: 3,
+    tags: ["news", "events"],
+    date: Date()
+  },
+  {
+    title: "Post Title 4",
+    body: "Body of post.",
+    category: "Event",
+    likes: 4,
+    tags: ["news", "events"],
+    date: Date()
+  }
+])
+
+db.teste.updateOne( 
+  { title: "Post Title 5" }, 
+  {
+    $set: 
+      {
+        title: "Post Title 5",
+        body: "Body of post.",
+        category: "Event",
+        likes: 5,
+        tags: ["news", "events"],
+        date: Date()
+      }
+  }, 
+  { upsert: true }
+)
+
+db.teste.insertOne({
+  title: "Post Title 6",
+  body: "Body of post.",
+  date: Date()
+})
+
+db.teste.insertOne({
+  title: "Post Title 7",
+  body: "Body of post.",
+  category: "Technology",
+  likes: 7,
+  tags: [],
+  date: Date()
+})
+
+db.teste.find()
+
+db.teste.find( {tags: null } )
+
+db.teste.count()
+
+db.teste.find( {category: "Event"} )
+
+db.teste.find( {category: {$in: ["Event", "News"]}} )
+
+db.teste.find( {category: "Event", "likes": {$lt: 5}} )
+
+db.teste.find( { "likes": {$lt: 3}} )
+
+db.teste.find( { "likes": {$gt: 3}} )
+
+db.teste.find( { $or: [{"likes": {$lt: 2}}, {"likes": {$gt: 4}}]} )
+
+db.teste.find( {category: "Event", "likes": {$lt: 5}} ).count()
+
+db.teste.find( { $or: [{"likes": {$lt: 3}}, {"category": null}]} )
+
+db.teste.find( {category: "Event",  $or: [{"likes": {$lt: 3}}, {"category": null}]} )
+
+db.teste.find({category: "Event"}, {category: true} )
+
+db.teste.find( {category: "Event", likes: 2} )
+
+db.teste.findOne({category: "Event"})
+
+db.teste.find().limit(2)
+
+db.teste.find().sort({category: 1})    
+
+db.teste.find({title: "Post Title 6"})
+
+db.teste.updateOne( {title: "Post Title 6"}, {$set: {category: "Nova"}})
+
+db.teste.updateOne( {title: "Post Title 6"}, {$set: {"tags": null}})
+
+db.teste.updateOne( {title: "Post Title 7"}, {$set: {"tags": ["old"]}})
+
+db.teste.updateMany({}, { $set: {tags: ["novo", "venho"]} })
+
+db.teste.update(
+    {title: "Post Title 6"}, 
+    {$set:  
+        {
+        title: "Post Title 8",
+        body: "Body of post.",
+        category: "Event",
+        likes: 8,
+        tags: ["news", "events"],
+        date: Date()
+        }
+    }
+)
+
+db.teste.update(
+    {title: "Post Title 9"}, 
+    {$set:  
+        {
+        title: "Post Title 9",
+        body: "Body of post.",
+        category: "Technology",
+        likes: 9,
+        tags: ["nova", "velha"],
+        date: Date()
+        }
+    },
+    { upsert: true }
+)
+
+db.teste.find().sort( {likes: 1})
+
+db.teste.remove({category: "Technology"})
+
+db.teste.deleteOne({ title: "Post Title 1" })
+
+db.teste.deleteMany({ category: "Event" })
+
+db.teste.find()
+
+db.teste.drop()
+
+========================== Lista de Operadores MongoDB =============================
+
+Operadores de Consulta:
+  $eq: Igualdade (=)
+  $ne: Diferença (<> ou !=)
+  $gt: Maior que (>)
+  $lt: Menor que (<)
+  $gte: Maior ou igual a (<=)
+  $lte: Menor ou igual a (<=)
+  $in: Valor está contido em um array (ou sequencia)
+  $nin: Valor não está contido em um array
+  $all: Todos os valores de um array estão presentes em outro array
+  $elemMatch: Um array contém um documento que atende a todos os critérios
+
+Operadores de Projeção:
+  $include: Inclui campos na projeção
+  $exclude: Exclui campos da projeção
+  $slice: Limita o número de documentos retornados
+  $sort: Ordena os documentos retornados
+  $limit: Limita o número de documentos retornados
+
+Operadores de Agregação:
+  $group: Agrupa documentos por um campo ou campos
+  $sum: Soma valores de um campo
+  $avg: Calcula a média de valores de um campo
+  $max: Retorna o valor máximo de um campo
+  $min: Retorna o valor mínimo de um campo
+  $first: Retorna o primeiro valor de um campo
+  $last: Retorna o último valor de um campo
+
+Operadores Lógicos:
+  $and: Combina vários critérios em um único
+  $or: Retorna documentos que atendem a pelo menos um critério
+  $not: Inverte o resultado de um critério
+
+Operadores de Expressão:
+  $abs: Retorna o valor absoluto de um número
+  $add: Soma números ou datas
+  $ceil: Retorna o menor número inteiro maior ou igual ao especificado
+  $divide: Retorna o resultado da divisão do primeiro número pelo segundo
+  $exp: Aumenta e para o expoente especificado
+
+Operadores de Tipo:
+  $type: Retorna o tipo de um valor
+
+Operadores de Modificação:
+  $set: Altera o valor de um campo
+  $unset: Remove um campo
+  $inc: Incrementa o valor de um campo
+  $mul: Multiplica o valor de um campo
+
+Operadores de Texto:
+  $concat: Concatena strings
+  $substr: Retorna uma substring
+  $toLower: Converte uma string para minúsculas
+  $toUpper: Converte uma string para maiúsculas
+
+Operadores de Data:
+  $date: Converte um valor para uma data
+  $year: Retorna o ano de uma data
+  $month: Retorna o mês de uma data
+  $day: Retorna o dia de uma data
+
+Operadores de Array:
+  $push: Adiciona um elemento a um array
+  $pop: Remove um elemento de um array
+  $size: Retorna o tamanho de um array
+
+Operadores de Geospatial:
+  $near: Retorna documentos próximos a um ponto
+  $within: Retorna documentos dentro de uma área
+
+Operadores de Atualização:
+  $set: Altera o valor de um campo
+  $unset: Remove um campo
+  $inc: Incrementa o valor de um campo
+  $mul: Multiplica o valor de um campo
+
+Operadores de Upsert:
+  $setOnInsert: Define um valor para um campo se o documento não existir
+
+Operadores de Merge:
+  $merge: Combina documentos de várias coleções
+
+Operadores de Indexação:
+  $createIndex: Cria um índice
+  $dropIndex: Remove um índice
+
+Operadores de Texto Completo:
+  $text: Realiza uma pesquisa de texto completo
+
+Operadores de Validação:
+  $validator: Valida um documento

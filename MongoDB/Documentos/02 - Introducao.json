@@ -1,0 +1,35 @@
+###########################################################
+# INTRODUÇÃO
+###########################################################
+
+
+# Mostrar bancos de dados disponíveis no servidor 
+show dbs 
+
+
+# Usar um determinado banco de dados (muda o contexto para o referido banco de dados) 
+use BANCO 
+
+
+# Criar uma collection
+db.createCollection('NOME_COLEÇÃO')
+
+
+# Eliminar um banco de dados
+use BANCO 
+db.dropDatabase();
+
+
+# Exibir Collections
+show collections 
+
+
+# Remover todos os documentos de uma collection
+db.NOME_COLEÇÃO.remove({}) 
+
+
+# Dropar uma collection
+db.NOME_COLEÇÃO.drop();
+
+
+
