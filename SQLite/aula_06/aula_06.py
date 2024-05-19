@@ -25,11 +25,13 @@ for linha in iter(cursor):
 print()
 # ---------------------------------------------------------
 
-# Deletar "id = 6" da tabela SQLite
-cursor.execute(
+# Deletar "id = 7" da tabela SQLite
+sql = (
     f'DELETE FROM {TABLE_NAME} '
-    'WHERE id = "6"'
+    'WHERE id = ?'
 )
+dados = ("7")
+cursor.execute(sql, dados)
 print('========================================================================')
 # ---------------------------------------------------------
 # Consultar toda da tabela SQLite

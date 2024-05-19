@@ -8,7 +8,7 @@ cursor = connection.cursor() # variável de controle
 
 # Consultar toda da tabela SQLite
 cursor.execute(
-    f'SELECT * FROM {TABLE_NAME}'
+    f'SELECT * FROM {TABLE_NAME}' # "*" todos os dados (_id, nome, peso)
 )
 
 '''
@@ -31,11 +31,15 @@ print()
 
 # ---------------------------------------------------------
 # Consultar (id = 3) na tabela SQLite
-cursor.execute(
-    f'SELECT * FROM {TABLE_NAME} '
-    'WHERE id = "3"'
+sql = (f'SELECT * FROM {TABLE_NAME} '
+    'WHERE id = ?'
 )
+dados = ("3")
+cursor.execute(sql, dados)
+
 linha = cursor.fetchone()
+# linha = cursor.fetchmany(5)
+# linha = cursor.fetchall()
 print(*linha)
 # ---------------------------------------------------------
 

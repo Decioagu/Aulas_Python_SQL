@@ -30,8 +30,9 @@ sql_02 = (
     'VALUES '
     '(:_nome, :_peso)' # dicionario
 )
+dados_02 = [{'_nome': 'Mara', '_peso' : 75.1}, {'_nome': 'Fabio', '_peso' : 45.3}]
 # multiplos elementos
-cursor.executemany(sql_02, [{'_nome': 'Mara', '_peso' : 75.1}, {'_nome': 'Fabio', '_peso' : 45.3}])
+cursor.executemany(sql_02, dados_02)
 
 connection.commit() # adicionar comando na tabela
 cursor.close() # Fechar variável de controle

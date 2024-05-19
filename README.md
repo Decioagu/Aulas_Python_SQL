@@ -8,10 +8,14 @@
     - __Update (Atualizar)__: Modifica o conteúdo de registros já existentes.
     - __Delete (Excluir)__: Remove registros da tabela.
 
-- =====> Criar    |  Ler         |  Atualizar  |  Excluir
 - CRUD - Create   |  Read        |  Update     |  Delete
+- =====> Criar    |  Ler         |  Atualizar  |  Excluir
+- <==========================================================>
 - SQL  - INSERT   |  SELECT      |  UPDATE     |  DELETE
 - =====> Inserir  |  Selecionar  |  Atualizar  |  Excluir
+- <==========================================================>
+- API  - POST    |  GET         |  PUT        |  DELETE
+- =====> Enviar  |  Selecionar  |  Atualizar  |  Excluir
 ---
 
 ## MySQL

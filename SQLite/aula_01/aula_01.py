@@ -3,7 +3,7 @@ import sqlite3
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).parent.parent / 'BD'
-DB_NAME = 'db.sqlite3'
+DB_NAME = 'db.sqlite3' # pode ser usar "nome.db" ou "nome.sqlite3" ou "nome.sqlite"
 DB_FILE = ROOT_DIR / DB_NAME
 TABLE_NAME = 'cliente'
 

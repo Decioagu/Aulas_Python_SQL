@@ -28,11 +28,12 @@ print()
 # UPDATE "id = 1" da tabela SQLite
 sql = (
     f'UPDATE {TABLE_NAME} '
-    'SET peso = "40", nome = "Rafael" '
+    'SET peso = ?, nome = ? '
     'WHERE id = ?'
 )
-
-cursor.execute(sql, [1])
+dados = ('100', 'Banana', "1")
+# cursor.execute(comando, dados)
+cursor.execute(sql, dados)
 print('========================================================================')
 # ---------------------------------------------------------
 # Consultar toda da tabela SQLite
