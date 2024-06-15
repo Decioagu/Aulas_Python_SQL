@@ -14,11 +14,11 @@
 - SQL  - INSERT   |  SELECT      |  UPDATE     |  DELETE
 - =====> Inserir  |  Selecionar  |  Atualizar  |  Excluir
 - <==========================================================>
-- API  - POST    |  GET         |  PUT        |  DELETE
-- =====> Enviar  |  Selecionar  |  Atualizar  |  Excluir
+- API  - POST    |  GET          |  PUT        |  DELETE
+- =====> Enviar  |  Selecionar   |  Atualizar  |  Excluir
 ---
 
-## MySQL
+## MySQL 
 - __PyMySQL__ é uma biblioteca leve e pura de Python que facilita a interação com bancos de dados MySQL.
   
 OBS: para execução do programa é necessário esta conectado no banco de dados já criado no __SGBD__ de sua escolha.
@@ -198,6 +198,23 @@ OBS: para execução do programa é necessário esta conectado no banco de dados
 
 - __.list_database_names()__:
 - Esse método é utilizado para listar os nomes de todos os banco de dados existente ativos.
+
+- __CRUD__ : __Criar, Rear, Atualizar e Deletar__
+
+- __.collection.insert_one()__ (Create):
+- O método é usado para insere apenas um documento por chamada.
+
+- __.collection.find()__ (Read):
+- O método é usado para retornará todos os documentos presentes na coleção.
+
+- __.collection.update_one()__ (Update):
+- O método é usado para atualizar dados específicos em um documento com base em um critério de pesquisa
+
+- __collection.replace_one()__ (Update):
+- O método é usado para atualizar __TODO__ o dado em um documento com base em um critério de pesquisa, exceto seu __id__
+
+- __.collection.delete_one()__ (Delete):
+- O método é usado para excluir um único documento de uma coleção.
 ---
 
 **aula_02**
@@ -225,4 +242,9 @@ OBS: para execução do programa é necessário esta conectado no banco de dados
 ---
 
 **aula_03**
-- Na __aula_03__ esta sendo empregado o uso de __armazenamento de senhas no arquivo .env__ e uso de __método de classe__ para gerir operações de __CRUD__. 
+- Na __aula_03__ esta sendo empregado o uso de __armazenamento de senhas no arquivo .env__ e uso de __método de classe__ para gerir operações de __CRUD__.
+---
+
+**aula_04**
+- No MongoDB, __Write Concern__ (Preocupação de Gravação) define o nível de confirmação que você deseja para operações de gravação. Isso significa que você pode especificar o quão certo você precisa estar de que seus dados foram gravados com sucesso antes que a operação seja considerada concluída.
+---
