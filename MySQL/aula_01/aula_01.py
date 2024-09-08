@@ -21,7 +21,7 @@ import pymysql
 import dotenv
 import os
 
-# chama arquivo .env (configurações confidenciais)
+# chama arquivo .env (configurações confidenciais)z
 dotenv.load_dotenv()
 
 # Conectar ao banco de dados

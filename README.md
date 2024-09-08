@@ -14,8 +14,8 @@
 - SQL  - INSERT   |  SELECT      |  UPDATE     |  DELETE
 - =====> Inserir  |  Selecionar  |  Atualizar  |  Excluir
 - <==========================================================>
-- API  - POST    |  GET          |  PUT        |  DELETE
-- =====> Enviar  |  Selecionar   |  Atualizar  |  Excluir
+- API  - POST     |  GET         |  PUT        |  DELETE
+- =====> Enviar   |  Selecionar  |  Atualizar  |  Excluir
 ---
 
 ## MySQL 
