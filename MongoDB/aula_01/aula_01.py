@@ -28,7 +28,7 @@ for reg in registro1:
         
 # ============== dados para inserir ==============
 dados1 = {
-            "_id" : "Meu_id_01",
+            "_id" : "Meu_id_03",
             "nome": "Décio Santana",
             "idade": 43
         }
@@ -86,7 +86,7 @@ for reg in registro5:
         print(reg)
 
 # ========== deletar documento (Delete) =========
-collection.delete_many({})
+# collection.delete_many({})
 
 # ========== buscar documento (Read) ==========
 print("\nregistro6\n")

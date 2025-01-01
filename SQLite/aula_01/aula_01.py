@@ -2,10 +2,13 @@
 import sqlite3
 from pathlib import Path
 
-ROOT_DIR = Path(__file__).parent.parent / 'BD'
+ROOT_DIR = Path(__file__).parent / 'BD'
 DB_NAME = 'db.sqlite3' # pode ser usar "nome.db" ou "nome.sqlite3" ou "nome.sqlite"
 DB_FILE = ROOT_DIR / DB_NAME
 TABLE_NAME = 'cliente'
+
+# Cria o diretório se não existir
+ROOT_DIR.mkdir(parents=True, exist_ok=True)
 
 # https://www.sqlite.org/doclist.html
 # https://www.techonthenet.com/sqlite/index.php
