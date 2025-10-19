@@ -59,8 +59,10 @@ sql_02 = (
             f'INSERT INTO {TABLE_NAME} '
             '(nome, idade) '
             'VALUES '
-            '(%(name)s, %(age)s) '
+            '(%(name)s, %(age)s) ' #
 )
+
+# Inserir valores nas colunas da tabela MySQL
 data_02 = [
     {"age": 3, "name": "Pedro"},
     {"age": 55, "name": "Helena"}

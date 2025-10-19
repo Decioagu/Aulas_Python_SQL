@@ -41,10 +41,11 @@ sql_01 = (
     f'INSERT INTO {TABLE_NAME} '
     '(nome, idade) '
     'VALUES '
-    '(%s, %s) '
+    '(%s, %s) ' # lista ou tupla
 )
 
 data_01 = ('Luana', 40)
+# data_01 = ['Luana', 40]
 result_01 = cursor.execute(sql_01, data_01) # tupla ou lista
 print(sql_01)
 print(data_01)
@@ -58,7 +59,7 @@ sql_02 = (
             f'INSERT INTO {TABLE_NAME} '
             '(nome, idade) '
             'VALUES '
-            '(%(name)s, %(age)s) '
+            '(%(name)s, %(age)s) ' # dicionário
 )
 data_02 = {
     "age": 37,
